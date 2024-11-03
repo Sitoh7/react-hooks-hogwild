@@ -14,21 +14,18 @@ function PigForm({addForm}){
     function submitForm(e){
         e.preventDefault()
 
-        setFormObj( formObj => formObj={
+       let  formData ={
             name : name,
             specialty: specialty,
             greased : greased,
             weight: weight,
             "highest medal achieved": medal,
             image: image,
-            medal: medal
-        })
-        
+           
+        }
+        addForm(formData)
     }
-    React.useEffect(() => {
-        console.log(formObj);
-    }, [formObj]); // Runs every time formObj changes
-
+  
 
 
     return(
@@ -42,16 +39,16 @@ function PigForm({addForm}){
         <label>Speciality</label>
         <input  value={specialty} onChange={(e)=>setSpeciality(e.target.value)}></input><br></br>
         <label>Weight:</label>
-        <input  value={weight} onChange={(e)=>setWeight(e.target.value)}></input>
+        <input  value={weight} onChange={(e)=>setWeight(Number(e.target.value))}></input>
         <label>Greased?</label>
         <input type="checkbox"  value={greased} onChange={(e)=>setGreased(e.target.checked)}></input>
         <label>Highest medal achieved?</label>
         <select name="medal" onChange={(e)=>setMedal(e.target.value)}>
-        <option value="Diamond">Diamond</option>
-            <option value="Platnium">Platnium</option>
-            <option value="Gold">Gold</option>
-            <option value="Silver">Silver</option>
-            <option value="Bronze">Bronze</option>
+        <option value="diamond">Diamond</option>
+            <option value="platnium">Platnium</option>
+            <option value="gold">Gold</option>
+            <option value="silver">Silver</option>
+            <option value="bronze">Bronze</option>
             <option value="wood">Wood</option>
         </select>
         <button type="submit">Add Pig</button>

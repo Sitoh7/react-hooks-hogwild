@@ -20,11 +20,11 @@ const greasedpigs = sortedData.filter(data=>{
 function sortPigs(){
     let sortedArray = [...data];
     if (sortByWeight) {
-        // Sort by weight if the weight checkbox is checked
+       
         sortedArray.sort((a, b) => parseFloat(a.weight) - parseFloat(b.weight));
       }
       if (sortByName) {
-        // Sort by name if the name checkbox is checked
+        
         sortedArray.sort((a, b) => a.name.localeCompare(b.name));
       }
 
