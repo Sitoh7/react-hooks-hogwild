@@ -16,15 +16,12 @@ function App() {
 		
 
 	}
-	React.useEffect(() => {
-        console.log(hogsData);
-    }, [hogsData]);
-
+	
 	return (
 		<div className="App">
 			
 			<Nav />
-			<PigForm addForm={addForm} />
+			<PigForm addForm={addForm} /><br></br>
 			<Pigs data={hogsData} />
 		</div>
 	);
